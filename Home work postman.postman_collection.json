@@ -1,0 +1,339 @@
+{
+	"info": {
+		"_postman_id": "2afc8711-108a-479d-9c4b-0f8902856550",
+		"name": "Home work postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21342134"
+	},
+	"item": [
+		{
+			"name": "create new pet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 550,\r\n  \"category\": {\r\n    \"id\": 5,\r\n    \"name\": \"kitten\"\r\n  },\r\n  \"name\": \"vaska\",\r\n  \"photoUrls\": [\r\n    \"https://www.google.com/search?q=%D0%BA%D1%96%D1%82&tbm=isch&chips=q:%D0%BA%D1%96%D1%82,online_chips:%D0%BBi%D1%81%D0%BE%D0%B2%D0%B8%D0%B9+%D0%BAi%D1%82:3-8S4FqWQds%3D&hl=uk&sa=X&ved=2ahUKEwiIg-HlraL4AhXrkosKHT_4AE0Q4lYoA3oECAEQIw&biw=1349&bih=635#imgrc=mGBMjGZjPfiOdM\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 843,\r\n      \"name\": \"cat\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find pet by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet/550",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						"550"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add image",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Master/Downloads/QA/пуйло.jpg"
+						},
+						{
+							"key": "additionalMetadata",
+							"value": "sleeping cat",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet/550/uploadImage",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						"550",
+						"uploadImage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update an existing pet",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 551,\r\n  \"category\": {\r\n    \"id\": 7,\r\n    \"name\": \"kitten\"\r\n  },\r\n  \"name\": \"vaska\",\r\n  \"photoUrls\": [\r\n    \"https://www.google.com/search?q=%D0%BA%D1%96%D1%82&tbm=isch&chips=q:%D0%BA%D1%96%D1%82,online_chips:%D0%BBi%D1%81%D0%BE%D0%B2%D0%B8%D0%B9+%D0%BAi%D1%82:3-8S4FqWQds%3D&hl=uk&sa=X&ved=2ahUKEwiIg-HlraL4AhXrkosKHT_4AE0Q4lYoA3oECAEQIw&biw=1349&bih=635#imgrc=mGBMjGZjPfiOdM\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 843,\r\n      \"name\": \"cat\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update pet with form data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "vitka",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "sold",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet/551",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						"551"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find pet by status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet/findByStatus?status=sold",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						"findByStatus"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "sold"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletes a pet",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet/550",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						"550"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "place an order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 5,\r\n  \"petId\": 8,\r\n  \"quantity\": 2,\r\n  \"shipDate\": \"2022-06-07T18:14:47.507Z\",\r\n  \"status\": \"placed\",\r\n  \"complete\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/store/order",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"store",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/store/order/5",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"store",
+						"order",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/store/order/5",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"store",
+						"order",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "returns pet inventories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/store/inventory",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"store",
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
